@@ -9,13 +9,16 @@ import Foundation
 import RxSwift
 
 protocol FirstMievModelInputProtocol {
-//    func viewDidLoad()
-//    func buttonTap()
+    func updateExpandedStateForItem(at indexPath: IndexPath)
 }
 
 protocol FirstMievModelOutputProtocol {
 
-    var comments: Observable<[Coment]>? { get }
+    var comments: Observable<[SectionModelFirst]> { get }
 }
 
 protocol FirstViewModelProtocol: FirstMievModelInputProtocol, FirstMievModelOutputProtocol { }
+
+protocol FirstRouterProtocol {
+    
+}

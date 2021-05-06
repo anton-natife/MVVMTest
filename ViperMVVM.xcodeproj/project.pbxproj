@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		08FD4FFA13A911C75705BB61 /* Pods_ViperMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4901F802602A88B3D9F45C7D /* Pods_ViperMVVM.framework */; };
+		3B26EFC126427ED700A8F927 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26EFBF26427ED700A8F927 /* FirstTableViewCell.swift */; };
+		3B26EFC226427ED700A8F927 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B26EFC026427ED700A8F927 /* FirstTableViewCell.xib */; };
+		3B26EFC52642A71A00A8F927 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26EFC42642A71A00A8F927 /* State.swift */; };
+		3B26EFC82642A7CA00A8F927 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26EFC72642A7CA00A8F927 /* ExtensionDate.swift */; };
 		3BC24D8D263AD0D100AAF403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC24D8C263AD0D100AAF403 /* AppDelegate.swift */; };
 		3BC24D96263AD0D300AAF403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC24D95263AD0D300AAF403 /* Assets.xcassets */; };
 		3BC24D99263AD0D300AAF403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC24D97263AD0D300AAF403 /* LaunchScreen.storyboard */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B26EFBF26427ED700A8F927 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		3B26EFC026427ED700A8F927 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
+		3B26EFC42642A71A00A8F927 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		3B26EFC72642A7CA00A8F927 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		3BC24D89263AD0D100AAF403 /* ViperMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC24D8C263AD0D100AAF403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BC24D95263AD0D300AAF403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +75,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3B26EFAE2642740F00A8F927 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BD20E7B263BFDD100D9CA8F /* FirstViewController.swift */,
+				3BD20E7C263BFDD100D9CA8F /* FirstViewController.xib */,
+				3B26EFBF26427ED700A8F927 /* FirstTableViewCell.swift */,
+				3B26EFC026427ED700A8F927 /* FirstTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B26EFB02642742100A8F927 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BD20E62263BE2A600D9CA8F /* FirstViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B26EFB22642743300A8F927 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BD20E65263BE2C900D9CA8F /* FirstModel.swift */,
+				3B26EFC42642A71A00A8F927 /* State.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3BC24D80263AD0D100AAF403 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +132,7 @@
 				3BC24D95263AD0D300AAF403 /* Assets.xcassets */,
 				3BC24D97263AD0D300AAF403 /* LaunchScreen.storyboard */,
 				3BC24D9A263AD0D300AAF403 /* Info.plist */,
+				3B26EFC72642A7CA00A8F927 /* ExtensionDate.swift */,
 			);
 			path = ViperMVVM;
 			sourceTree = "<group>";
@@ -104,12 +141,11 @@
 			isa = PBXGroup;
 			children = (
 				3BD20E6E263BE3A100D9CA8F /* FirstInterfase.swift */,
-				3BD20E7B263BFDD100D9CA8F /* FirstViewController.swift */,
-				3BD20E62263BE2A600D9CA8F /* FirstViewModel.swift */,
 				3BD20E6B263BE31100D9CA8F /* FirstWireFrame.swift */,
+				3B26EFAE2642740F00A8F927 /* View */,
+				3B26EFB02642742100A8F927 /* ViewModel */,
+				3B26EFB22642743300A8F927 /* Model */,
 				3BD20E68263BE2FB00D9CA8F /* FirstRouter.swift */,
-				3BD20E65263BE2C900D9CA8F /* FirstModel.swift */,
-				3BD20E7C263BFDD100D9CA8F /* FirstViewController.xib */,
 			);
 			path = FirstModule;
 			sourceTree = "<group>";
@@ -199,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B26EFC226427ED700A8F927 /* FirstTableViewCell.xib in Resources */,
 				3BC24DB9263AF1E200AAF403 /* .swiftlint.yml in Resources */,
 				3BC24D99263AD0D300AAF403 /* LaunchScreen.storyboard in Resources */,
 				3BC24D96263AD0D300AAF403 /* Assets.xcassets in Resources */,
@@ -281,8 +318,11 @@
 				3BD20E78263BF3CF00D9CA8F /* APIServiceFirst.swift in Sources */,
 				3BD20E63263BE2A600D9CA8F /* FirstViewModel.swift in Sources */,
 				3BC24D8D263AD0D100AAF403 /* AppDelegate.swift in Sources */,
+				3B26EFC126427ED700A8F927 /* FirstTableViewCell.swift in Sources */,
 				3BD20E66263BE2C900D9CA8F /* FirstModel.swift in Sources */,
 				3BD20E7D263BFDD100D9CA8F /* FirstViewController.swift in Sources */,
+				3B26EFC52642A71A00A8F927 /* State.swift in Sources */,
+				3B26EFC82642A7CA00A8F927 /* ExtensionDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

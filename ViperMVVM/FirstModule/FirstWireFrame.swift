@@ -16,6 +16,7 @@ class FirstWireFrame {
         let router = FirstRouter(controller: view)
         let viewModel = FirstViewModel(router: router, apiService: apiservice)
         view.viewModel = viewModel
+        view.router = router
         
         return view
     }

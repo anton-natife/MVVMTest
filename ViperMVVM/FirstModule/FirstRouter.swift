@@ -16,6 +16,6 @@ class FirstRouter {
     }
 }
 
-extension FirstRouter {
+extension FirstRouter: FirstRouterProtocol {
    
 }

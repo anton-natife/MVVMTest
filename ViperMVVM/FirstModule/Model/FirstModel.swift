@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct FailableDecoder<Base: Decodable> : Decodable {
     var base: Base?
@@ -55,6 +56,7 @@ struct Coment: Codable {
         timeshamp = try container.decode(Double.self, forKey: .timeshamp)
         title = try container.decode(String.self, forKey: .title)
         previewText = try container.decode(String.self, forKey: .previewText)
+        likesCount = try container.decode(Int.self, forKey: .likesCount)
         
         // First check for a Int
         do {
@@ -88,4 +90,28 @@ struct Coment: Codable {
         case decodeError
     }
     
+}
+
+struct SectionModelFirst {
+    var header: String!
+    var items: [Item]
+}
+
+extension SectionModelFirst: AnimatableSectionModelType, Hashable {
+    typealias Item  = State
+    var identity: String {
+        return "\(hashValue)"
+    }
+    
+    init(original: SectionModelFirst, items: [Item]) {
+        self = original
+        self.items = items
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(header)
+        items.forEach({ item in
+            hasher.combine(item.identity)
+        })
+    }
 }
