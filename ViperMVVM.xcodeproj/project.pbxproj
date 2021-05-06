@@ -12,6 +12,14 @@
 		3B26EFC226427ED700A8F927 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B26EFC026427ED700A8F927 /* FirstTableViewCell.xib */; };
 		3B26EFC52642A71A00A8F927 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26EFC42642A71A00A8F927 /* State.swift */; };
 		3B26EFC82642A7CA00A8F927 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26EFC72642A7CA00A8F927 /* ExtensionDate.swift */; };
+		3B63722226443338008AAA2B /* SecondInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B63722126443338008AAA2B /* SecondInterface.swift */; };
+		3B63722626443382008AAA2B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B63722426443382008AAA2B /* SecondViewController.swift */; };
+		3B63722726443382008AAA2B /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63722526443382008AAA2B /* SecondViewController.xib */; };
+		3B63722F2644347D008AAA2B /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B63722D2644347D008AAA2B /* SecondTableViewCell.swift */; };
+		3B6372302644347D008AAA2B /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63722E2644347D008AAA2B /* SecondTableViewCell.xib */; };
+		3B637233264434C3008AAA2B /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B637232264434C3008AAA2B /* SecondViewModel.swift */; };
+		3B63723626443538008AAA2B /* SecondWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B63723526443538008AAA2B /* SecondWireFrame.swift */; };
+		3B63723F2644395A008AAA2B /* APIServiceSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B63723E2644395A008AAA2B /* APIServiceSecond.swift */; };
 		3BC24D8D263AD0D100AAF403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC24D8C263AD0D100AAF403 /* AppDelegate.swift */; };
 		3BC24D96263AD0D300AAF403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC24D95263AD0D300AAF403 /* Assets.xcassets */; };
 		3BC24D99263AD0D300AAF403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC24D97263AD0D300AAF403 /* LaunchScreen.storyboard */; };
@@ -33,6 +41,14 @@
 		3B26EFC026427ED700A8F927 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 		3B26EFC42642A71A00A8F927 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3B26EFC72642A7CA00A8F927 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
+		3B63722126443338008AAA2B /* SecondInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInterface.swift; sourceTree = "<group>"; };
+		3B63722426443382008AAA2B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		3B63722526443382008AAA2B /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		3B63722D2644347D008AAA2B /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		3B63722E2644347D008AAA2B /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
+		3B637232264434C3008AAA2B /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
+		3B63723526443538008AAA2B /* SecondWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWireFrame.swift; sourceTree = "<group>"; };
+		3B63723E2644395A008AAA2B /* APIServiceSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceSecond.swift; sourceTree = "<group>"; };
 		3BC24D89263AD0D100AAF403 /* ViperMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC24D8C263AD0D100AAF403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BC24D95263AD0D300AAF403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +119,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3B63723826443823008AAA2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BD20E8A263C2A0700D9CA8F /* SecondModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B63723A2644383C008AAA2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B63722426443382008AAA2B /* SecondViewController.swift */,
+				3B63722526443382008AAA2B /* SecondViewController.xib */,
+				3B63722D2644347D008AAA2B /* SecondTableViewCell.swift */,
+				3B63722E2644347D008AAA2B /* SecondTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B63723C26443862008AAA2B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B637232264434C3008AAA2B /* SecondViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3BC24D80263AD0D100AAF403 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +168,7 @@
 		3BC24D8B263AD0D100AAF403 /* ViperMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				3B63722126443338008AAA2B /* SecondInterface.swift */,
 				3BD20E89263C29D900D9CA8F /* SecondModule */,
 				3BD20E73263BF29600D9CA8F /* Services */,
 				3BD20E5D263BDFA700D9CA8F /* FirstModule */,
@@ -155,6 +199,7 @@
 			children = (
 				3BD20E74263BF2C300D9CA8F /* DIContainer.swift */,
 				3BD20E77263BF3CF00D9CA8F /* APIServiceFirst.swift */,
+				3B63723E2644395A008AAA2B /* APIServiceSecond.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -162,7 +207,10 @@
 		3BD20E89263C29D900D9CA8F /* SecondModule */ = {
 			isa = PBXGroup;
 			children = (
-				3BD20E8A263C2A0700D9CA8F /* SecondModel.swift */,
+				3B63723826443823008AAA2B /* Model */,
+				3B63723A2644383C008AAA2B /* View */,
+				3B63723C26443862008AAA2B /* ViewModel */,
+				3B63723526443538008AAA2B /* SecondWireFrame.swift */,
 			);
 			path = SecondModule;
 			sourceTree = "<group>";
@@ -237,7 +285,9 @@
 			files = (
 				3B26EFC226427ED700A8F927 /* FirstTableViewCell.xib in Resources */,
 				3BC24DB9263AF1E200AAF403 /* .swiftlint.yml in Resources */,
+				3B63722726443382008AAA2B /* SecondViewController.xib in Resources */,
 				3BC24D99263AD0D300AAF403 /* LaunchScreen.storyboard in Resources */,
+				3B6372302644347D008AAA2B /* SecondTableViewCell.xib in Resources */,
 				3BC24D96263AD0D300AAF403 /* Assets.xcassets in Resources */,
 				3BD20E7E263BFDD100D9CA8F /* FirstViewController.xib in Resources */,
 			);
@@ -313,13 +363,19 @@
 				3BD20E6F263BE3A100D9CA8F /* FirstInterfase.swift in Sources */,
 				3BD20E8B263C2A0700D9CA8F /* SecondModel.swift in Sources */,
 				3BD20E75263BF2C300D9CA8F /* DIContainer.swift in Sources */,
+				3B63722F2644347D008AAA2B /* SecondTableViewCell.swift in Sources */,
+				3B63722626443382008AAA2B /* SecondViewController.swift in Sources */,
 				3BD20E6C263BE31100D9CA8F /* FirstWireFrame.swift in Sources */,
 				3BD20E69263BE2FB00D9CA8F /* FirstRouter.swift in Sources */,
+				3B63723F2644395A008AAA2B /* APIServiceSecond.swift in Sources */,
+				3B63722226443338008AAA2B /* SecondInterface.swift in Sources */,
 				3BD20E78263BF3CF00D9CA8F /* APIServiceFirst.swift in Sources */,
 				3BD20E63263BE2A600D9CA8F /* FirstViewModel.swift in Sources */,
+				3B63723626443538008AAA2B /* SecondWireFrame.swift in Sources */,
 				3BC24D8D263AD0D100AAF403 /* AppDelegate.swift in Sources */,
 				3B26EFC126427ED700A8F927 /* FirstTableViewCell.swift in Sources */,
 				3BD20E66263BE2C900D9CA8F /* FirstModel.swift in Sources */,
+				3B637233264434C3008AAA2B /* SecondViewModel.swift in Sources */,
 				3BD20E7D263BFDD100D9CA8F /* FirstViewController.swift in Sources */,
 				3B26EFC52642A71A00A8F927 /* State.swift in Sources */,
 				3B26EFC82642A7CA00A8F927 /* ExtensionDate.swift in Sources */,

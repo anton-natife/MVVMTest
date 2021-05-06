@@ -11,6 +11,7 @@ class DIContainer {
     static var shared = DIContainer()
     
     lazy var apiServiceFirst: APIServiceFirstProtocol = APIServiceFirstImplementation()
+    lazy var imageServis: ImageService = ImageServiceImplementation()
 }
 
 enum Result<T> {
