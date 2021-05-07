@@ -9,11 +9,11 @@ import UIKit
 
 class SecondWireFrame {
     
-    static func create() -> UIViewController {
+    static func create(index: Int) -> UIViewController {
         
         let view = SecondViewController()
-        let apiservice = DIContainer.shared.apiServiceFirst
-        let viewModel = SecondViewModel(apiService: apiservice)
+        let apiservice = DIContainer.shared.imageServis
+        let viewModel = SecondViewModel(index: index, apiService: apiservice)
         view.viewModel = viewModel
         
         return view

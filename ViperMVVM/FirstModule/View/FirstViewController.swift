@@ -38,6 +38,10 @@ final class FirstViewController: UIViewController {
         return dataSource
     }()
     
+    enum Route: String {
+              case second
+           }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customizeTable()
@@ -98,7 +102,7 @@ final class FirstViewController: UIViewController {
         
     }
     
-    private func bindUI() {
-        
-    }
+    func showMap() {
+ //           router.route(to: Route.second.rawValue, from: self, parameters: self.viewModel.showCoordinate())
+           }
 }

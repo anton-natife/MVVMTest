@@ -9,7 +9,7 @@ import Foundation
 
 protocol APIServiceFirstProtocol {
     func getList(handler: @escaping (Result<Coments>) -> Void)
-    func getComent(index: Int, handler: @escaping (Result<CurentComents>) -> Void)
+//    func getComent(index: Int, handler: @escaping (Result<CurentComents>) -> Void)
     func getListWithId(myId: Int, handler: @escaping (Result<Coments>) -> Void)
 }
 
@@ -24,14 +24,11 @@ class APIServiceFirstImplementation {
     fileprivate enum Endpoint {
         case list
         case feed(Int)
-        case post(Int)
         
         var path: String {
             switch self {
             case .list:
                 return "main.json"
-            case .post(let myId):
-                return "posts/\(myId).json"
             case .feed(let page):
                 return "feed/\(page).json"
             }
@@ -77,23 +74,23 @@ extension APIServiceFirstImplementation: APIServiceFirstProtocol {
         }
     }
     
-    func getComent(index: Int, handler: @escaping (Result<CurentComents>) -> Void) {
-        let targetURL = baseURL.appendingPathComponent(Endpoint.post(index).path)
-        self.load(targetURL) { (result) in
-            
-            switch result {
-            case .success(let data):
-                do {
-                    let parsedResult: CurentComents = try JSONDecoder().decode(CurentComents.self, from: data)
-                    handler(.success(parsedResult))
-                } catch let error {
-                    handler(.failure(error))
-                }
-            case .failure(let error):
-                handler(.failure(error))
-            }
-        }
-    }
+//    func getComent(index: Int, handler: @escaping (Result<CurentComents>) -> Void) {
+//        let targetURL = baseURL.appendingPathComponent(Endpoint.post(index).path)
+//        self.load(targetURL) { (result) in
+//
+//            switch result {
+//            case .success(let data):
+//                do {
+//                    let parsedResult: CurentComents = try JSONDecoder().decode(CurentComents.self, from: data)
+//                    handler(.success(parsedResult))
+//                } catch let error {
+//                    handler(.failure(error))
+//                }
+//            case .failure(let error):
+//                handler(.failure(error))
+//            }
+//        }
+//    }
     
     private func load(_ resource: URL, result: @escaping ((Result<Data>) -> Void)) {
         let request = URLRequest(url: resource)

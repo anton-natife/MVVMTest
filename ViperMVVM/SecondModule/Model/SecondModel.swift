@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct CurentComents: Codable {
     var post: CurentComent
@@ -70,4 +71,24 @@ struct CurentComent: Codable {
         case decodeError
     }
     
+}
+
+enum ComentId {
+    case title(String?)
+    case text(String?)
+    case image(Data)
+    case footer(hurts:String, time: String)
+}
+
+struct SectionModelSecond {
+    var header: String!
+    var items: [ComentId]
+}
+
+extension SectionModelSecond: SectionModelType {
+    typealias Item  = ComentId
+    init(original: SectionModelSecond, items: [Item]) {
+        self = original
+        self.items = items
+    }
 }

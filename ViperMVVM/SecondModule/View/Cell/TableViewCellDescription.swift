@@ -1,14 +1,16 @@
 //
-//  SecondTableViewCell.swift
+//  TableViewCellDescription.swift
 //  ViperMVVM
 //
-//  Created by Trainee Alex on 06.05.2021.
+//  Created by Trainee Alex on 07.05.2021.
 //
 
 import UIKit
 
-class SecondTableViewCell: UITableViewCell {
+class TableViewCellDescription: UITableViewCell {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +20,11 @@ class SecondTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(description: String) {
+        
+        self.descriptionLabel.text = description
     }
     
 }

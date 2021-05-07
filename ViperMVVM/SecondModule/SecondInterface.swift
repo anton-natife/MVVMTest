@@ -13,9 +13,11 @@ protocol SecondMievModelInputProtocol {
 }
 
 protocol SecondMievModelOutputProtocol {
+    var data: Observable<[SectionModelSecond]> { get }
 
 //    var comments: Observable<[SectionModelFirst]> { get }
 }
 
-protocol SecondViewModelProtocol: SecondMievModelInputProtocol, SecondMievModelOutputProtocol { }
-
+protocol SecondViewModelProtocol: SecondMievModelInputProtocol, SecondMievModelOutputProtocol {
+    
+}
