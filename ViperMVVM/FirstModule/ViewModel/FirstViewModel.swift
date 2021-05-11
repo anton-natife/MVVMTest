@@ -48,4 +48,9 @@ class FirstViewModel: FirstViewModelProtocol {
         
         self.reloadComment.accept(sections)
     }
+    
+    func getIndex(index: IndexPath) -> Int {
+        return self.reloadComment.value[index.section].items[index.row].comment.postId
+    }
+    
 }

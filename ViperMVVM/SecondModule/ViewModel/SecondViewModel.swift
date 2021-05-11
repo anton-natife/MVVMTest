@@ -44,7 +44,6 @@ class SecondViewModel: SecondViewModelProtocol {
                 
             case .failure(let error):
                 print("\(error.localizedDescription)")
-                break
             }
         }
     }

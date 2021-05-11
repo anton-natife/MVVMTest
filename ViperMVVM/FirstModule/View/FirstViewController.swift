@@ -60,6 +60,8 @@ final class FirstViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.showsVerticalScrollIndicator = false
+        
+        self.tableView.delegate = self
     }
     
     // MARK: Bind Table
@@ -68,6 +70,8 @@ final class FirstViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .bind(to: self.tableView.rx.items(dataSource: self.dataSourceFirst))
             .disposed(by: disposBag)
+        
+      
     }
     
     private func showFullTitleForCell(at indexPath: IndexPath) {
@@ -102,7 +106,14 @@ final class FirstViewController: UIViewController {
         
     }
     
-    func showMap() {
- //           router.route(to: Route.second.rawValue, from: self, parameters: self.viewModel.showCoordinate())
-           }
+//    func showSecond() {
+//            router.route(to: Route.second.rawValue, from: self, parameters: self.viewModel.showCoordinate())
+//           }
+}
+
+extension FirstViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.router.route(to: Route.second.rawValue, from: self, parameters: self.viewModel.getIndex(index: indexPath))
+    }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FirstRouter {
     
@@ -18,4 +19,13 @@ class FirstRouter {
 
 extension FirstRouter: FirstRouterProtocol {
    
+    func route(to routeID: String, from context: UIViewController, parameters: Int) {
+          guard let route = FirstViewController.Route(rawValue: routeID) else {
+             return
+          }
+          switch route {
+          case .second:
+           context.navigationController?.pushViewController( SecondWireFrame.create(index: parameters), animated: true)
+          }
+       }
 }

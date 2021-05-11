@@ -15,10 +15,11 @@ protocol FirstMievModelInputProtocol {
 protocol FirstMievModelOutputProtocol {
 
     var comments: Observable<[SectionModelFirst]> { get }
+    func getIndex(index: IndexPath) -> Int
 }
 
 protocol FirstViewModelProtocol: FirstMievModelInputProtocol, FirstMievModelOutputProtocol { }
 
 protocol FirstRouterProtocol {
-    
+    func route(to routeID: String, from context: UIViewController, parameters: Int)
 }
