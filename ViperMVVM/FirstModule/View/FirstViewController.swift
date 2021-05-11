@@ -21,7 +21,7 @@ final class FirstViewController: UIViewController {
         let dataSource = RxTableViewSectionedAnimatedDataSource<SectionModelFirst>(configureCell: { [weak self] (_, tableView, indexPath, item) -> UITableViewCell in
             guard let self = self else { return UITableViewCell() }
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstTableViewCell.cellIdentifer, for: indexPath) as? FirstTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FirstTableViewCell", for: indexPath) as? FirstTableViewCell else { return UITableViewCell() }
             
             cell.fill(state: item)
             cell.action

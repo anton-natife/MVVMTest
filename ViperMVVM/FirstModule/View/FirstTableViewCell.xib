@@ -42,9 +42,6 @@
                                 <state key="normal" title="Показать полностью">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="showText:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z04-iP-Z6D"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SlD-7w-aVf">
                                 <rect key="frame" x="10" y="205" width="300" height="20"/>

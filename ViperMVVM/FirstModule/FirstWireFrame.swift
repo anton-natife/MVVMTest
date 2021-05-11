@@ -14,7 +14,7 @@ class FirstWireFrame {
         let view = FirstViewController()
         let apiservice = DIContainer.shared.apiServiceFirst
         let router = FirstRouter(controller: view)
-        let viewModel = FirstViewModel(router: router, apiService: apiservice)
+        let viewModel = FirstViewModel(apiService: apiservice)
         view.viewModel = viewModel
         view.router = router
         

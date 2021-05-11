@@ -10,16 +10,14 @@ import RxSwift
 import RxCocoa
 
 class FirstViewModel: FirstViewModelProtocol {
-    
-    private var router: FirstRouter?
+
     private var apiService: APIServiceFirstProtocol
     var comments: Observable<[SectionModelFirst]> {
         return reloadComment.asObservable()
     }
     private let reloadComment: BehaviorRelay<[SectionModelFirst]>
     
-    init(router: FirstRouter, apiService: APIServiceFirstProtocol) {
-        self.router = router
+    init(apiService: APIServiceFirstProtocol) {
         self.apiService = apiService
         
         self.reloadComment = BehaviorRelay<[SectionModelFirst]>(value: [])

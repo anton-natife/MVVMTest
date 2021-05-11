@@ -10,11 +10,7 @@ import RxSwift
 import RxCocoa
 
 class FirstTableViewCell: UITableViewCell {
-    
-    static let cellIdentifer = "FirstTableViewCell"
-    private var isExpanded: Bool = false
-    var callback: (() -> Void)?
-
+   
     var action: ControlEvent<Void> {
         return presentButton.rx.tap
     }
@@ -27,37 +23,10 @@ class FirstTableViewCell: UITableViewCell {
     @IBOutlet weak var hurtImageView: UIImageView!
     @IBOutlet weak var countHurtLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-//    override var frame: CGRect {
-//            get {
-//                return super.frame
-//            }
-//            set (newFrame) {
-//                var frame =  newFrame
-//                frame.origin.y += 4
-//                frame.size.height -= 2 * 5
-//                super.frame = frame
-//            }
-//        }
-   
-    @IBAction func showText(_ sender: UIButton) {
-        isExpanded.toggle()
-        callback?()
     }
     
     func fill(state: State) {
@@ -75,7 +44,6 @@ class FirstTableViewCell: UITableViewCell {
         } else {
             timeLabel.text = ""
         }
-//        self.layoutIfNeeded()
     }
     
 }
