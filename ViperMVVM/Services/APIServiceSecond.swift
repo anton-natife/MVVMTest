@@ -65,7 +65,7 @@ extension ImageServiceImplementation: ImageServiceProtocol {
     }
     
     func downLoadImage(url: [String], completion: @escaping ([Data]?) -> Void) {
-        self.loadImagesToFile(url: url) { (success) in
+        self.loadImagesToFile(url: url) { (_) in
             var images: [Data] = []
             url.forEach { (image) in
                 guard let image = self.downloadImage(url: image) else { return }

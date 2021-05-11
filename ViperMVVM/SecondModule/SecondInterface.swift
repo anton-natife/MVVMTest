@@ -9,15 +9,12 @@ import Foundation
 import RxSwift
 
 protocol SecondMievModelInputProtocol {
-//    func updateExpandedStateForItem(at indexPath: IndexPath)
 }
 
 protocol SecondMievModelOutputProtocol {
     var data: Observable<[SectionModelSecond]> { get }
-
-//    var comments: Observable<[SectionModelFirst]> { get }
+    var dataLabel: Observable<String> { get }
 }
 
 protocol SecondViewModelProtocol: SecondMievModelInputProtocol, SecondMievModelOutputProtocol {
-    
 }

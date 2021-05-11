@@ -37,8 +37,7 @@ struct CurentComent: Codable {
         text = try container.decode(String.self, forKey: .text)
         images = try container.decode([String].self, forKey: .images)
         likesCount = try container.decode(Int.self, forKey: .likesCount)
-        
-        // First check for a Int
+      
         do {
             if let miId = try? container.decode(Int.self, forKey: .postId) {
                 postId = miId
@@ -77,7 +76,7 @@ enum ComentId {
     case title(String?)
     case text(String?)
     case image(Data)
-    case footer(hurts:String, time: String)
+    case footer(hurts: String, time: String)
 }
 
 struct SectionModelSecond {

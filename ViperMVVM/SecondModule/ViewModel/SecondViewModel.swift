@@ -12,15 +12,18 @@ import RxCocoa
 class SecondViewModel: SecondViewModelProtocol {
     
     private var apiService: ImageServiceProtocol
-//    var data: Observable<[SectionModelSecond]>
     var data: Observable<[SectionModelSecond]> {
         return reloadData.asObservable()
     }
+    var dataLabel: Observable<String>
+    
     private let reloadData: BehaviorRelay<[SectionModelSecond]>
     
     init(index: Int, apiService: ImageServiceProtocol) {
         self.apiService = apiService
         self.reloadData = BehaviorRelay<[SectionModelSecond]>(value: [])
+        let dataLableIn = BehaviorRelay<String>(value: "No data")
+        self.dataLabel = dataLableIn.asObservable()
  
         var dataSource: [ComentId] = []
         
@@ -29,7 +32,8 @@ class SecondViewModel: SecondViewModelProtocol {
             case .success(let coments):
                 dataSource.append(.title(coments.post.title))
                 dataSource.append(.text(coments.post.text))
-                
+                dataLableIn.accept(coments.post.title!)
+
                 guard let data = coments.post.images else { break }
                 self?.apiService.downLoadImage(url: data) { (images) in
                     guard let images = images else { return }

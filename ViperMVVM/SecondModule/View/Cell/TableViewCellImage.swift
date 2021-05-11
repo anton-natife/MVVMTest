@@ -11,29 +11,35 @@ class TableViewCellImage: UITableViewCell {
 
     @IBOutlet weak var imageImageView: UIImageView!
     
+    @IBOutlet weak var heightImage: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-    func configure(data: Data) {
-        
-        self.imageImageView.image = UIImage(data: data)
-        
-//        if image != nil {
-//            curentImageView.image = image
-//            let imWidth = image?.size.width
-//            let imHeight = image?.size.height
-//            let ratio = imHeight! / imWidth!
-//            self.heightContraint?.constant = width! * ratio
-//            self.layoutIfNeeded()
-//        }
+    func configure(data: Data?, width: CGFloat?) {
+        if let data = data, let width = width, let image = UIImage(data: data) {
+            
+            self.imageImageView.image = image
+            let imWidth = image.size.width
+            let imHeight = image.size.height
+            let ratio = imHeight / imWidth
+            self.heightImage?.constant = width * ratio
+            self.layoutIfNeeded()
+        } else if let image = UIImage(named: "not found"), let width = width {
+            
+            self.imageImageView.image = image
+            self.imageImageView.backgroundColor = .systemGray4
+            let imWidth = image.size.width
+            let imHeight = image.size.height
+            let ratio = imHeight / imWidth
+            self.heightImage?.constant = width * ratio
+            self.layoutIfNeeded()
+        }
     }
-    
 }

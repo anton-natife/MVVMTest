@@ -30,8 +30,12 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
 
         self.customizeTable()
+        self.createDataSource()
+        self.customizeNavigation()
+        self.bindUI()
     }
     
 }
@@ -43,6 +47,23 @@ extension SecondViewController {
         self.tableView.register(UINib(nibName: "TableViewCellDescription", bundle: nil), forCellReuseIdentifier: "Description")
         self.tableView.register(UINib(nibName: "TableViewCellImage", bundle: nil), forCellReuseIdentifier: "Image")
         self.tableView.register(UINib(nibName: "TableViewCellHurts", bundle: nil), forCellReuseIdentifier: "Heart")
+        self.tableView.separatorStyle = .none
+        self.tableView.showsVerticalScrollIndicator = false
+    }
+    
+    private func customizeNavigation() {
+        
+        self.titlelabel?.text = "SecondVC"
+        self.titlelabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        self.titlelabel?.textColor = .white
+        self.titlelabel?.translatesAutoresizingMaskIntoConstraints = false
+        self.titlelabel?.widthAnchor.constraint(equalToConstant: self.view.bounds.size.width / 3 * 2).isActive = true
+        
+        navigationItem.titleView = self.titlelabel
+        
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        backButton.tintColor = .white
+        self.navigationController?.navigationBar.topItem!.backBarButtonItem = backButton
     }
     
     private func bindUI() {
@@ -51,6 +72,9 @@ extension SecondViewController {
                     .observeOn(MainScheduler.instance)
                     .bind(to: self.tableView.rx.items(dataSource: self.dataSourceSecond))
                     .disposed(by: disposBag)
+        
+        self.viewModel.dataLabel.bind(to: self.titlelabel!.rx.text)
+            .disposed(by: disposBag)
     }
     
     private func createDataSource() {
@@ -70,7 +94,7 @@ extension SecondViewController {
                     return cell
                 case .image(let data):
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: "Image", for: indexPath) as? TableViewCellImage else { return UITableViewCell() }
-                    cell.configure(data: data)
+                    cell.configure(data: data, width: self?.view.frame.width)
                     // cell.configure(image, self.view.frame.width)
                     return cell
                 case .footer(hurts: let hurts, time: let time):

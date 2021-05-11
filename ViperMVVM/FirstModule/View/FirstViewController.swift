@@ -70,8 +70,6 @@ final class FirstViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .bind(to: self.tableView.rx.items(dataSource: self.dataSourceFirst))
             .disposed(by: disposBag)
-        
-      
     }
     
     private func showFullTitleForCell(at indexPath: IndexPath) {

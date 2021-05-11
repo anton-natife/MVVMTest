@@ -28,7 +28,7 @@ class FirstTableViewCell: UITableViewCell {
         super.prepareForReuse()
         disposeBag = DisposeBag()
     }
-    
+   
     func fill(state: State) {
       
         descriptionLabel.numberOfLines = state.isExpanded ? 0 : 2
